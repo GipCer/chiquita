@@ -16,10 +16,10 @@ const CONFIG = {
     { src: 'fotos/foto8.jpg', mini: 'fotos/mini/foto8.jpg', frase: 'Una bella sonrisa' },
     { src: 'fotos/foto9.jpg', mini: 'fotos/mini/foto9.jpg', frase: 'Bonito cumpleaños amor' },
     { src: 'fotos/foto10.jpg', mini: 'fotos/mini/foto10.jpg', frase: 'Un mostacho jaja' },
-    { src: 'fotos/foto11.jpg', mini: 'fotos/mini/foto11.jpg', frase: 'Ese guiño que me desarma 😉' },
-    { src: 'fotos/foto12.jpg', mini: 'fotos/mini/foto12.jpg', frase: 'Ese guiño que me desarma 😉' },
+    { src: 'fotos/foto11.jpg', mini: 'fotos/mini/foto11.jpg', frase: 'Te amo mucho mi amor' },
+    { src: 'fotos/foto12.jpg', mini: 'fotos/mini/foto12.jpg', frase: 'Holiiiii' },
     { src: 'fotos/foto13.jpg', mini: 'fotos/mini/foto13.jpg', frase: 'Nuestra primera foto' },
-    { src: 'fotos/foto14.jpg', mini: 'fotos/mini/foto14.jpg', frase: 'Ese guiño que me desarma 😉' },
+    { src: 'fotos/foto14.jpg', mini: 'fotos/mini/foto14.jpg', frase: 'Eres el amor de mi vida' },
     // Para agregar más: copia la foto a /fotos y añade una línea igual a las de arriba
   ],
 
