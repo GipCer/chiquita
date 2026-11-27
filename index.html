@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Para Andrea 💜</title>
+<meta name="theme-color" content="#e91e63">
+<meta name="description" content="Un regalito hecho con cariño para Andrea">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Andrea">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icono-192.png">
+<link rel="apple-touch-icon" href="icono-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="btnSonido" class="sonido-btn" aria-label="Sonido de gatitos">🔊</button>
+
+<!-- Pantalla de bienvenida -->
+<div id="bienvenida" class="bienvenida">
+  <button class="sobre" id="btnAbrir" aria-label="Abrir el regalo">
+    <span class="sobre-icono">💌</span>
+    <span class="sobre-titulo">Para Andrea</span>
+    <span class="sobre-sub">Toca para abrir</span>
+  </button>
+</div>
+
+<main id="app" class="app oculto">
+
+  <section id="menu" class="pantalla activa">
+    <h1 id="titulo">Para Andrea</h1>
+    <p class="subtitulo">Mi chiquita linda 💜</p>
+    <p class="saludo" id="saludo"></p>
+    <div class="menu-grid">
+      <button data-ir="galeria"><span>📸</span>Galería</button>
+      <button data-ir="musica"><span>🎵</span>Música</button>
+      <button data-ir="notas"><span>📝</span>Notas</button>
+      <button data-ir="carta"><span>💌</span>Carta</button>
+      <button data-ir="contador"><span>⏳</span>Días juntos</button>
+      <button data-ir="ruleta"><span>🎲</span>Próximo plan</button>
+      <button data-ir="razones"><span>💖</span>Razones</button>
+      <button data-ir="abre"><span>✉️</span>Ábreme cuando…</button>
+      <button data-ir="cupones"><span>🎟️</span>Cupones</button>
+      <button data-ir="juego" class="ancho"><span>🃏</span>Juego de memoria</button>
+    </div>
+    <p class="pie">Hecho con 💜 por tu Chiquito</p>
+  </section>
+
+  <section id="galeria" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Nuestros momentos</h2>
+    <div class="galeria-grid" id="galeriaGrid"></div>
+  </section>
+
+  <section id="musica" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Nuestra música</h2>
+    <div class="reproductor">
+      <div class="disco" id="disco"><span>💜</span></div>
+      <p class="nombre-cancion" id="cTitulo">—</p>
+      <p class="artista" id="cArtista"></p>
+      <input type="range" id="barra" min="0" max="1000" value="0" aria-label="Progreso">
+      <div class="tiempos"><span id="tAct">0:00</span><span id="tTot">0:00</span></div>
+      <div class="controles">
+        <button id="bPrev" aria-label="Anterior">⏮</button>
+        <button id="bPlay" class="grande" aria-label="Reproducir">▶</button>
+        <button id="bNext" aria-label="Siguiente">⏭</button>
+      </div>
+    </div>
+    <ul class="lista-canciones" id="listaCanciones"></ul>
+  </section>
+
+  <section id="notas" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Notas para ti</h2>
+    <div class="nota-dia">
+      <span class="etiqueta">Nota de hoy</span>
+      <strong id="notaHoyT"></strong>
+      <p id="notaHoyP"></p>
+    </div>
+    <div class="notas-lista" id="notasLista"></div>
+  </section>
+
+  <section id="carta" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Una carta para ti</h2>
+    <div class="carta-texto" id="cartaTexto"></div>
+  </section>
+
+  <section id="contador" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Días juntos</h2>
+    <p class="numero" id="dias">0</p>
+    <p class="centro">días desde el 3 de julio</p>
+    <p class="centro destacado" id="mesesDias"></p>
+    <div class="reloj">
+      <div><b id="rH">0</b><small>horas</small></div>
+      <div><b id="rM">0</b><small>min</small></div>
+      <div><b id="rS">0</b><small>seg</small></div>
+    </div>
+    <div class="proximo" id="proximo"></div>
+    <h3>Nuestros hitos</h3>
+    <ul class="hitos" id="hitos"></ul>
+  </section>
+
+  <section id="ruleta" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Nuestro próximo plan</h2>
+    <p class="centro">Deja que el destino decida 🎲</p>
+    <div class="ruleta-caja"><p id="plan" class="plan">¿Qué haremos?</p></div>
+    <button class="accion" id="btnGirar">Girar 🎲</button>
+  </section>
+
+  <section id="razones" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Por qué te quiero</h2>
+    <div class="razon-tarjeta" id="razonTarjeta"><span id="razonNum">💖</span><p id="razonTexto">Toca el botón para descubrir una razón</p></div>
+    <button class="accion" id="btnRazon">Otra razón 💖</button>
+  </section>
+
+  <section id="abre" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Ábreme cuando…</h2>
+    <p class="centro">Toca el sobre que necesites</p>
+    <div class="sobres" id="sobres"></div>
+  </section>
+
+  <section id="cupones" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Cupones de amor</h2>
+    <p class="centro">Toca uno para canjearlo 🎟️</p>
+    <div class="cupones" id="cuponesLista"></div>
+  </section>
+
+  <section id="juego" class="pantalla">
+    <button class="volver" data-ir="menu">← Volver</button>
+    <h2>Encuentra las parejas</h2>
+    <p class="centro" id="juegoInfo">Movimientos: 0</p>
+    <div class="memoria" id="memoria"></div>
+    <button class="accion" id="btnReiniciar">Reiniciar 🔄</button>
+  </section>
+
+</main>
+
+<!-- Visor de fotos -->
+<div id="visor" class="visor" aria-hidden="true">
+  <button class="visor-cerrar" id="vCerrar" aria-label="Cerrar">✕</button>
+  <button class="visor-flecha izq" id="vPrev" aria-label="Anterior">‹</button>
+  <figure>
+    <img id="fotoGrande" src="" alt="">
+    <figcaption id="fotoPie"></figcaption>
+  </figure>
+  <button class="visor-flecha der" id="vNext" aria-label="Siguiente">›</button>
+</div>
+
+<!-- Mini reproductor flotante -->
+<div id="mini" class="mini oculto">
+  <button id="miniPlay" aria-label="Pausar o reproducir">⏸</button>
+  <span id="miniTitulo"></span>
+</div>
+
+<div id="mensaje" class="mensaje-secreto" aria-live="polite"></div>
+<div id="fondo-animado" class="corazones" aria-hidden="true"></div>
+<div id="efectos" class="efectos" aria-hidden="true"></div>
+
+<script src="sonidos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
